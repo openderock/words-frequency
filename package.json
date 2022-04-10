@@ -1,0 +1,12 @@
+{
+  "name": "@derockit/words-frequency",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Sajjad shirazy <shirazy.sajjad@gmail.com>",
+  "license": "MIT",
+  "main": "dist/words-frequency.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  }
+}
