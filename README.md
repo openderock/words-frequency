@@ -5,13 +5,13 @@ An NPM package for common English words frequency based on 20,000 [common words 
 ## Install
 
 ```bash
-npm i @derockit/words-frequency
+npm i "@derock.ir/words-frequency"
 ```
 
 ## Usage
 
 ```javascript
-const wordsFrequency = require('@derockit/words-frequency');
+const wordsFrequency = require('@derock.ir/words-frequency');
 
 console.log(wordsFrequency[0]);
 // [1, "the", 5.6271872]
