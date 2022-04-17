@@ -11,7 +11,9 @@ const rows = csvSource.split('\n').map((row) => row.split(','));
 rows.shift();
 
 const cleanedWords = rows
-  .filter(([rank, word]) => /^[a-z]+$/.test(word))
+  .filter(
+    ([rank, word, count]) => count && word.length > 1 && /^[a-z]+$/.test(word)
+  )
   .map(([rank, word, count], index) => [
     index + 1,
     word,
