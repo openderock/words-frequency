@@ -27,3 +27,7 @@ Every arry item includes:
 
 * [The source file with 20,000 words](/resources/project-gutenberge-20000-common-words.csv).
 * [The cleaned list with 18,270 words](/dist/words-frequency.csv).
+
+## SQL file
+
+* [The cleaned list with 18,270 words](/dist/words-frequency.sql).

@@ -40,4 +40,28 @@ fs.writeFileSync('./dist/words-frequency.json', JSON.stringify(cleanedWords), {
   encoding: 'utf-8',
 });
 
+// saving as SQL
+fs.writeFileSync(
+  './dist/words-frequency.sql',
+  `
+-- DROP TABLE IF EXISTS "Word";
+-- CreateTable
+-- CREATE TABLE "Word" (
+--   "rank" INTEGER NOT NULL,
+--   "word" TEXT NOT NULL,
+--   "occurrence" DOUBLE PRECISION NOT NULL,
+--   CONSTRAINT "Word_pkey" PRIMARY KEY ("rank")
+-- );
+INSERT INTO 
+  "Word" (rank, word, occurrence)
+VALUES ${cleanedWords
+    .map(
+      ([rank, word, percentage]) => `
+  (${rank},'${word}',${percentage})`
+    )
+    .join(',')};
+`,
+  { encoding: 'utf-8' }
+);
+
 console.timeEnd('done');
