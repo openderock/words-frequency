@@ -1,4 +1,3 @@
-// @ts-check
 console.time('done');
 const fs = require('fs');
 
@@ -12,7 +11,10 @@ rows.shift();
 
 const input = rows
   .filter(
-    ([rank, word, count]) => count && word.length > 1 && /^[a-z]+$/.test(word)
+    ([rank, word, count]) =>
+      count &&
+      (word.length > 1 || ['i', 'a'].includes(word)) &&
+      /^[a-z]+$/.test(word)
   )
   .map(([rank, word, count], index) => [
     index + 1,
